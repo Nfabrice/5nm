@@ -14,24 +14,41 @@ export function CtaFooter() {
             Your next stay starts <em className="italic">here.</em>
           </h2>
         </Reveal>
-        <Reveal delay={0.15} className="mt-12 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <Reveal
+          delay={0.15}
+          className="mt-12 flex flex-col gap-8 md:flex-row md:items-end md:justify-between"
+        >
           <p className="max-w-sm text-base leading-relaxed text-white/65">
             Find a space that fits the way you want to live.
           </p>
-          <ButtonLink href="#apartments" variant="inverse" size="lg" arrow="right" className="self-start md:self-auto">
+          <ButtonLink
+            href="#apartments"
+            variant="inverse"
+            size="lg"
+            arrow="right"
+            className="self-start md:self-auto"
+          >
             Explore apartments
           </ButtonLink>
         </Reveal>
       </section>
 
-      <footer id="contact" className="container-page border-t border-white/15 pt-16 pb-10 md:pt-20">
+      <footer
+        id="contact"
+        className="container-page border-t border-white/15 pt-16 pb-10 md:pt-20"
+      >
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Wordmark className="text-4xl" />
-            <p className="mt-4 text-sm text-white/60">Modern apartments in Rwanda.</p>
+            <p className="mt-4 text-sm text-white/60">
+              Modern apartments in Rwanda.
+            </p>
           </div>
 
-          <FooterColumn title="Navigate" className="md:col-span-2 md:col-start-7">
+          <FooterColumn
+            title="Navigate"
+            className="md:col-span-2 md:col-start-7"
+          >
             {navLinks.map((l) => (
               <li key={l.href}>
                 <FooterLink href={l.href}>{l.label}</FooterLink>
@@ -48,10 +65,14 @@ export function CtaFooter() {
               </FooterLink>
             </li>
             <li>
-              <FooterLink href="tel:+250000000000">{contact.phone}</FooterLink>
+              <FooterLink href="tel:+250 738 834 750">
+                {contact.phone}
+              </FooterLink>
             </li>
             <li>
-              <FooterLink href={`mailto:${contact.email}`}>{contact.email}</FooterLink>
+              <FooterLink href={`mailto:${contact.email}`}>
+                {contact.email}
+              </FooterLink>
             </li>
           </FooterColumn>
 
@@ -74,13 +95,12 @@ export function CtaFooter() {
           aria-hidden
           className="mt-20 select-none font-display text-[clamp(5rem,24vw,22rem)] font-light leading-[0.8] tracking-[-0.05em] text-white/[0.07]"
         >
-          5N<em className="italic">&amp;</em>M
-          <span className="block pt-[0.08em] text-[0.36em] italic tracking-[-0.02em]">Apartments</span>
+          5 N<em className="italic">&amp;</em>M
         </p>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-white/15 pt-6 text-xs text-white/45 sm:flex-row sm:justify-between">
           <p>© 2026 5N&amp;M Apartments. All rights reserved.</p>
-          <p>Gikondo, Kigali, Rwanda</p>
+          <p>Kigali, Rwanda</p>
         </div>
       </footer>
     </div>
@@ -104,7 +124,15 @@ function FooterColumn({
   );
 }
 
-function FooterLink({ href, external, children }: { href: string; external?: boolean; children: React.ReactNode }) {
+function FooterLink({
+  href,
+  external,
+  children,
+}: {
+  href: string;
+  external?: boolean;
+  children: React.ReactNode;
+}) {
   return (
     <a
       href={href}

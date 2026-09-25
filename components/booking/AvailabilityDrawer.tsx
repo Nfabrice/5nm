@@ -66,8 +66,18 @@ export function AvailabilityDrawer() {
 }
 
 function DrawerBody() {
-  const { checkIn, checkOut, guests, apartment, setDates, setGuests, closeDrawer } = useBooking();
-  const [step, setStep] = useState<Step>(checkIn && checkOut ? "checking" : "dates");
+  const {
+    checkIn,
+    checkOut,
+    guests,
+    apartment,
+    setDates,
+    setGuests,
+    closeDrawer,
+  } = useBooking();
+  const [step, setStep] = useState<Step>(
+    checkIn && checkOut ? "checking" : "dates",
+  );
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => closeRef.current?.focus(), []);
@@ -80,7 +90,9 @@ function DrawerBody() {
   }, [step]);
 
   const fits = guests <= apartment.guests;
-  const match = fits ? apartment : apartments.find((a) => a.guests >= guests) ?? apartment;
+  const match = fits
+    ? apartment
+    : (apartments.find((a) => a.guests >= guests) ?? apartment);
   const nights = checkIn && checkOut ? nightsBetween(checkIn, checkOut) : 0;
   const total = nights * match.pricePerNight;
 
@@ -127,11 +139,22 @@ function DrawerBody() {
           >
             {step === "dates" && (
               <div>
-                <h3 id="drawer-title" className="font-display text-4xl font-light leading-none sm:text-5xl">
+                <h3
+                  id="drawer-title"
+                  className="font-display text-4xl font-light leading-none sm:text-5xl"
+                >
                   When are you staying?
                 </h3>
-                <p className="mt-3 text-sm text-mute">{apartment.name} · {apartment.neighbourhood}, Kigali</p>
-                <RangeCalendar className="mt-8" months={1} start={checkIn} end={checkOut} onChange={setDates} />
+                <p className="mt-3 text-sm text-mute">
+                  {apartment.name} · {apartment.neighbourhood}, Kigali
+                </p>
+                <RangeCalendar
+                  className="mt-8"
+                  months={1}
+                  start={checkIn}
+                  end={checkOut}
+                  onChange={setDates}
+                />
                 <div className="mt-8 border-t border-line pt-6">
                   <GuestStepper value={guests} onChange={setGuests} />
                 </div>
@@ -144,14 +167,23 @@ function DrawerBody() {
                   <motion.span
                     className="absolute inset-y-0 left-0 w-1/3 bg-ink"
                     animate={{ x: ["-100%", "300%"] }}
-                    transition={{ duration: 1.1, ease: "easeInOut", repeat: Infinity }}
+                    transition={{
+                      duration: 1.1,
+                      ease: "easeInOut",
+                      repeat: Infinity,
+                    }}
                   />
                 </span>
-                <p id="drawer-title" className="mt-6 font-display text-3xl font-light">
+                <p
+                  id="drawer-title"
+                  className="mt-6 font-display text-3xl font-light"
+                >
                   Checking your dates
                 </p>
                 <p className="mt-2 text-sm text-mute">
-                  {checkIn && checkOut && `${formatShort(checkIn)} – ${formatShort(checkOut)}`}
+                  {checkIn &&
+                    checkOut &&
+                    `${formatShort(checkIn)} – ${formatShort(checkOut)}`}
                 </p>
               </div>
             )}
@@ -164,12 +196,16 @@ function DrawerBody() {
                   </span>
                   Available
                 </p>
-                <h3 id="drawer-title" className="mt-5 font-display text-4xl font-light leading-none sm:text-5xl">
+                <h3
+                  id="drawer-title"
+                  className="mt-5 font-display text-4xl font-light leading-none sm:text-5xl"
+                >
                   {match.name}
                 </h3>
                 {!fits && (
                   <p className="mt-3 text-sm text-mute">
-                    {apartment.name} sleeps {apartment.guests}. This home fits {guestLabel(guests).toLowerCase()}.
+                    {apartment.name} sleeps {apartment.guests}. This home fits{" "}
+                    {guestLabel(guests).toLowerCase()}.
                   </p>
                 )}
                 <SmartImage
@@ -179,35 +215,53 @@ function DrawerBody() {
                   className="mt-7 aspect-[16/10] w-full"
                 />
                 <dl className="mt-7 divide-y divide-line border-y border-line text-sm">
-                  <Row label="Location" value={`${match.neighbourhood}, Kigali`} />
-                  <Row label="Dates" value={`${formatShort(checkIn)} – ${formatShort(checkOut)}`} />
+                  <Row
+                    label="Location"
+                    value={`${match.neighbourhood}, Kigali`}
+                  />
+                  <Row
+                    label="Dates"
+                    value={`${formatShort(checkIn)} – ${formatShort(checkOut)}`}
+                  />
                   <Row label="Guests" value={guestLabel(guests)} />
-                  <Row label="Rate" value={`${formatRWF(match.pricePerNight)} / night`} />
+                  <Row
+                    label="Rate"
+                    value={`${formatRWF(match.pricePerNight)} / night`}
+                  />
                   <Row
                     label={`${nights} ${nights === 1 ? "night" : "nights"}`}
                     value={formatRWF(total)}
                     strong
                   />
                 </dl>
-                <p className="mt-3 text-xs text-smoke">Estimated total. Final price confirmed at booking.</p>
+                <p className="mt-3 text-xs text-smoke">
+                  Estimated total. Final price confirmed at booking.
+                </p>
               </div>
             )}
 
             {step === "confirm" && (
               <div className="flex min-h-[50vh] flex-col justify-center">
                 <p className="eyebrow text-mute">Almost there</p>
-                <h3 id="drawer-title" className="mt-5 font-display text-4xl font-light leading-[1.02] sm:text-5xl">
+                <h3
+                  id="drawer-title"
+                  className="mt-5 font-display text-4xl font-light leading-[1.02] sm:text-5xl"
+                >
                   Online booking is <em className="italic">coming soon.</em>
                 </h3>
                 <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-mute">
-                  This is a preview of the 5N&amp;M Apartments booking experience. Your dates have not been reserved and no
-                  payment was taken. To book {match.name} today, reach us directly.
+                  This is a preview of the 5N&amp;M Apartments booking
+                  experience. Your dates have not been reserved and no payment
+                  was taken. To book {match.name} today, reach us directly.
                 </p>
                 <div className="mt-8 space-y-2 text-sm">
-                  <a className="block underline underline-offset-4 hover:opacity-60" href="mailto:hello@5nm.rw">
+                  <a
+                    className="block underline underline-offset-4 hover:opacity-60"
+                    href="mailto:hello@5nm.rw"
+                  >
                     hello@5nm.rw
                   </a>
-                  <p className="text-mute">+250 XXX XXX XXX</p>
+                  <p className="text-mute">+250 738 834 750</p>
                 </div>
               </div>
             )}
@@ -215,7 +269,12 @@ function DrawerBody() {
         </AnimatePresence>
       </div>
 
-      <footer className={cn("border-t border-line px-6 py-5 sm:px-10", step === "checking" && "invisible")}>
+      <footer
+        className={cn(
+          "border-t border-line px-6 py-5 sm:px-10",
+          step === "checking" && "invisible",
+        )}
+      >
         {step === "dates" && (
           <Button
             className="w-full"
@@ -228,12 +287,22 @@ function DrawerBody() {
           </Button>
         )}
         {step === "result" && (
-          <Button className="w-full" size="lg" arrow="right" onClick={() => setStep("confirm")}>
+          <Button
+            className="w-full"
+            size="lg"
+            arrow="right"
+            onClick={() => setStep("confirm")}
+          >
             Continue booking
           </Button>
         )}
         {(step === "confirm" || step === "checking") && (
-          <Button className="w-full" size="lg" variant="outline" onClick={closeDrawer}>
+          <Button
+            className="w-full"
+            size="lg"
+            variant="outline"
+            onClick={closeDrawer}
+          >
             Back to apartments
           </Button>
         )}
@@ -242,11 +311,26 @@ function DrawerBody() {
   );
 }
 
-function Row({ label, value, strong }: { label: string; value: string; strong?: boolean }) {
+function Row({
+  label,
+  value,
+  strong,
+}: {
+  label: string;
+  value: string;
+  strong?: boolean;
+}) {
   return (
     <div className="flex items-baseline justify-between gap-6 py-3.5">
       <dt className={strong ? "font-medium text-ink" : "text-mute"}>{label}</dt>
-      <dd className={cn("text-right", strong ? "font-display text-2xl" : "text-ink")}>{value}</dd>
+      <dd
+        className={cn(
+          "text-right",
+          strong ? "font-display text-2xl" : "text-ink",
+        )}
+      >
+        {value}
+      </dd>
     </div>
   );
 }
