@@ -54,7 +54,7 @@ export function SmartImage({
             </defs>
             <rect width="100%" height="100%" fill={`url(#${patternId})`} />
           </svg>
-          <span className="eyebrow relative">5 N&amp;M</span>
+          <span className="eyebrow relative">5N&amp;M</span>
         </div>
       ) : (
         <Image

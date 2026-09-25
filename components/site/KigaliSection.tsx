@@ -1,4 +1,4 @@
-import { apartments, images } from "@/lib/data";
+import { contact, images } from "@/lib/data";
 import { pad } from "@/lib/utils";
 import { ImageReveal, Reveal } from "../ui/Reveal";
 import { SectionLabel } from "../ui/SectionIntro";
@@ -7,8 +7,6 @@ import { SmartImage } from "../ui/SmartImage";
 const nearby = ["City Centre", "Restaurants & cafés", "Business districts", "Easy access to major attractions"];
 
 export function KigaliSection() {
-  const neighbourhoods = Array.from(new Set(apartments.map((a) => a.neighbourhood)));
-
   return (
     <section id="location" className="py-24 md:py-36">
       <div className="container-page">
@@ -51,8 +49,8 @@ export function KigaliSection() {
             <Reveal delay={0.15} className="mt-12 lg:mt-20">
               <div className="border-t border-ink pt-6">
                 <div className="flex items-baseline justify-between">
-                  <p className="font-display text-3xl font-light">Kigali, Rwanda</p>
-                  <p className="text-[11px] tabular-nums text-mute">1°56′ S · 30°03′ E</p>
+                  <p className="font-display text-3xl font-light">Gikondo, Kigali</p>
+                  <p className="text-[11px] tabular-nums text-mute">1°58′ S · 30°04′ E</p>
                 </div>
                 <ul className="mt-6">
                   {nearby.map((item, i) => (
@@ -65,9 +63,19 @@ export function KigaliSection() {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 text-xs leading-relaxed text-mute">
-                  Our homes are in {neighbourhoods.slice(0, -1).join(", ")} and {neighbourhoods.at(-1)}.
-                </p>
+                <address className="mt-6 text-xs not-italic leading-relaxed text-mute">
+                  {contact.street}, {contact.area}
+                  <br />
+                  {contact.location} ·{" "}
+                  <a
+                    href={contact.mapsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-ink"
+                  >
+                    View on map
+                  </a>
+                </address>
               </div>
             </Reveal>
           </div>

@@ -1,12 +1,18 @@
 import { unsplash } from "./utils";
 
 /**
- * Placeholder content for the 5 N&M prototype.
+ * Placeholder content for the 5N&M Apartments prototype.
  * Swap these for real listings (or a CMS / API) when the booking
  * backend is ready. Components only depend on the `Apartment` shape.
  */
 
-export type Amenity = "furnished" | "wifi" | "kitchen" | "parking" | "workspace" | "laundry";
+export type Amenity =
+  | "furnished"
+  | "wifi"
+  | "kitchen"
+  | "parking"
+  | "workspace"
+  | "laundry";
 
 export type Apartment = {
   id: string;
@@ -32,13 +38,14 @@ export const apartments: Apartment[] = [
     number: "01",
     name: "N&M Residence 01",
     type: "Residence",
-    neighbourhood: "Kacyiru",
+    neighbourhood: "Gikondo",
     city: "Kigali",
     bedrooms: 2,
     bathrooms: 2,
     guests: 4,
     pricePerNight: 85_000,
-    tagline: "Designed for quiet mornings, productive days and comfortable evenings.",
+    tagline:
+      "Designed for quiet mornings, productive days and comfortable evenings.",
     description:
       "A calm two-bedroom home with generous light, a full kitchen and a living room made for slow evenings. Everything is in place, so you can arrive and simply live.",
     amenities: ["furnished", "wifi", "kitchen", "parking"],
@@ -66,7 +73,7 @@ export const apartments: Apartment[] = [
     number: "02",
     name: "N&M Studio 02",
     type: "Studio",
-    neighbourhood: "Kiyovu",
+    neighbourhood: "Gikondo",
     city: "Kigali",
     bedrooms: 1,
     bathrooms: 1,
@@ -100,13 +107,14 @@ export const apartments: Apartment[] = [
     number: "03",
     name: "N&M Residence 03",
     type: "Residence",
-    neighbourhood: "Nyarutarama",
+    neighbourhood: "Gikondo",
     city: "Kigali",
     bedrooms: 3,
     bathrooms: 3,
     guests: 6,
     pricePerNight: 140_000,
-    tagline: "Room to gather, room to breathe. Made for families and longer stays.",
+    tagline:
+      "Room to gather, room to breathe. Made for families and longer stays.",
     description:
       "Our largest home, with three en-suite bedrooms, an open living and dining space, and parking. Built for families, teams and longer stays.",
     amenities: ["furnished", "wifi", "kitchen", "parking", "laundry"],
@@ -134,7 +142,7 @@ export const apartments: Apartment[] = [
     number: "04",
     name: "N&M Loft 04",
     type: "Loft",
-    neighbourhood: "Kimihurura",
+    neighbourhood: "Gikondo",
     city: "Kigali",
     bedrooms: 1,
     bathrooms: 1,
@@ -142,7 +150,7 @@ export const apartments: Apartment[] = [
     pricePerNight: 65_000,
     tagline: "Open, airy and quietly social. A loft for couples and creatives.",
     description:
-      "A light-filled one-bedroom loft with an open kitchen and lounge. Close to the neighbourhood's restaurants and cafés.",
+      "A light-filled one-bedroom loft with an open kitchen and lounge. Close to local restaurants and cafés.",
     amenities: ["furnished", "wifi", "kitchen", "workspace"],
     cover: {
       src: unsplash("photo-1680416124510-5eae1beca412"),
@@ -225,7 +233,12 @@ export const images = {
 
 export const contact = {
   location: "Kigali, Rwanda",
-  phone: "+250 XXX XXX XXX",
+  street: "KK 706 St",
+  area: "Gikondo, Merez 2",
+  address: "KK 706 St, Gikondo, Merez 2, Kigali, Rwanda",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=KK+706+St+Gikondo+Kigali+Rwanda",
+  phone: "+250 738 834 750",
   email: "hello@5nm.rw",
   instagram: "https://instagram.com/",
   whatsapp: "https://wa.me/",

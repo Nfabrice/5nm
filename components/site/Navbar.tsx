@@ -50,7 +50,7 @@ export function Navbar() {
             scrolled ? "h-16" : "h-20 md:h-24",
           )}
         >
-          <a href="#top" aria-label="5 N&M, back to top" onClick={() => setOpen(false)}>
+          <a href="#top" aria-label="5N&M Apartments, back to top" onClick={() => setOpen(false)}>
             <Wordmark />
           </a>
 

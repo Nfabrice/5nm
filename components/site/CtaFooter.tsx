@@ -40,7 +40,13 @@ export function CtaFooter() {
           </FooterColumn>
 
           <FooterColumn title="Contact" className="md:col-span-2">
-            <li className="text-white/80">{contact.location}</li>
+            <li>
+              <FooterLink href={contact.mapsUrl} external>
+                {contact.street}, {contact.area}
+                <br />
+                {contact.location}
+              </FooterLink>
+            </li>
             <li>
               <FooterLink href="tel:+250000000000">{contact.phone}</FooterLink>
             </li>
@@ -68,12 +74,13 @@ export function CtaFooter() {
           aria-hidden
           className="mt-20 select-none font-display text-[clamp(5rem,24vw,22rem)] font-light leading-[0.8] tracking-[-0.05em] text-white/[0.07]"
         >
-          5 N<em className="italic">&amp;</em>M
+          5N<em className="italic">&amp;</em>M
+          <span className="block pt-[0.08em] text-[0.36em] italic tracking-[-0.02em]">Apartments</span>
         </p>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-white/15 pt-6 text-xs text-white/45 sm:flex-row sm:justify-between">
-          <p>© 2026 5 N&amp;M. All rights reserved.</p>
-          <p>Kigali, Rwanda</p>
+          <p>© 2026 5N&amp;M Apartments. All rights reserved.</p>
+          <p>Gikondo, Kigali, Rwanda</p>
         </div>
       </footer>
     </div>

@@ -9,7 +9,7 @@ export function WhySection() {
     <section id="about" className="border-t border-line bg-white py-24 md:py-36">
       <div className="container-page">
         <Reveal>
-          <SectionLabel index="04">Why 5 N&amp;M</SectionLabel>
+          <SectionLabel index="04">Why 5N&amp;M</SectionLabel>
           <h2 className="mt-8 max-w-[14ch] font-display text-[clamp(3rem,8vw,8rem)] font-light leading-[0.9] tracking-[-0.03em]">
             More than a place to <em className="italic">stay.</em>
           </h2>

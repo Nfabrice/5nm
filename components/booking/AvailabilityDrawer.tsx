@@ -200,7 +200,7 @@ function DrawerBody() {
                   Online booking is <em className="italic">coming soon.</em>
                 </h3>
                 <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-mute">
-                  This is a preview of the 5 N&amp;M booking experience. Your dates have not been reserved and no
+                  This is a preview of the 5N&amp;M Apartments booking experience. Your dates have not been reserved and no
                   payment was taken. To book {match.name} today, reach us directly.
                 </p>
                 <div className="mt-8 space-y-2 text-sm">

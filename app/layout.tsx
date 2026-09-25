@@ -8,11 +8,11 @@ import "@fontsource-variable/manrope/wght.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "5 N&M · Apartments in Kigali, Rwanda",
+  title: "5N&M Apartments · Gikondo, Kigali, Rwanda",
   description:
     "Thoughtfully designed, fully furnished apartments for short and medium stays in Kigali, Rwanda.",
   openGraph: {
-    title: "5 N&M · A better way to stay.",
+    title: "5N&M Apartments · A better way to stay.",
     description: "Thoughtfully designed apartments for comfortable stays in Rwanda.",
     type: "website",
   },

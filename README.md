@@ -1,6 +1,6 @@
-# 5 N&M · Landing page
+# 5N&M Apartments · Landing page
 
-Premium landing page concept for 5 N&M, apartments for rent in Kigali, Rwanda.
+Premium landing page concept for 5N&M Apartments, KK 706 St, Gikondo (Merez 2), Kigali, Rwanda.
 Booking is a frontend-only prototype (no backend, no payments).
 
 ## Run it
@@ -63,4 +63,4 @@ Photos are remote Unsplash placeholders (see `lib/data.ts`). If one fails to loa
 For launch, drop real photos into `public/` and point `lib/data.ts` at them
 (e.g. `src: "/apartments/residence-01.jpg"`).
 
-Contact details (`+250 XXX XXX XXX`, social links) are placeholders.
+Contact details (`+250 738 834 750`, social links) are placeholders.

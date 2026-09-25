@@ -34,8 +34,8 @@ export function FeaturedApartments() {
     <section id="apartments" className="container-page py-24 md:py-36">
       <SectionIntro index="01" label="Apartments" title={<>Find your <em className="italic">space</em></>}>
         <p>
-          From a focused studio to a three-bedroom family home, 5 N&amp;M offers thoughtfully designed apartments
-          across Kigali for short breaks, work trips and longer stays.
+          From a focused studio to a three-bedroom family home, 5N&amp;M Apartments offers thoughtfully designed homes
+          in Gikondo, Kigali, for short breaks, work trips and longer stays.
         </p>
       </SectionIntro>
 
