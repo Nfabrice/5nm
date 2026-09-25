@@ -240,6 +240,9 @@ export const contact = {
     "https://www.google.com/maps/search/?api=1&query=KK+706+St+Gikondo+Kigali+Rwanda",
   phone: "+250 738 834 750",
   email: "hello@5nm.rw",
+  get phoneHref() {
+    return `tel:${this.phone.replace(/\s/g, "")}`;
+  },
   instagram: "https://instagram.com/",
   whatsapp: "https://wa.me/",
 };

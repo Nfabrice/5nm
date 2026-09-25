@@ -65,7 +65,7 @@ export function CtaFooter() {
               </FooterLink>
             </li>
             <li>
-              <FooterLink href="tel:+250 738 834 750">
+              <FooterLink href={contact.phoneHref}>
                 {contact.phone}
               </FooterLink>
             </li>

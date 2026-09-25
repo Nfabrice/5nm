@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, Check, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { apartments } from "@/lib/data";
+import { apartments, contact } from "@/lib/data";
 import { formatShort, nightsBetween } from "@/lib/dates";
 import { cn, formatRWF } from "@/lib/utils";
 import { Button } from "../ui/Button";
@@ -257,11 +257,16 @@ function DrawerBody() {
                 <div className="mt-8 space-y-2 text-sm">
                   <a
                     className="block underline underline-offset-4 hover:opacity-60"
-                    href="mailto:hello@5nm.rw"
+                    href={`mailto:${contact.email}`}
                   >
-                    hello@5nm.rw
+                    {contact.email}
                   </a>
-                  <p className="text-mute">+250 738 834 750</p>
+                  <a
+                    className="block text-mute underline-offset-4 hover:underline"
+                    href={contact.phoneHref}
+                  >
+                    {contact.phone}
+                  </a>
                 </div>
               </div>
             )}
